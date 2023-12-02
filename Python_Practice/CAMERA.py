@@ -5,6 +5,8 @@ import time
 
 def NOWCAMERA(picture_trigger):
     camera = cv2.VideoCapture(0, cv2.CAP_V4L)
+    camera.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
+    camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
     while True:
         ret, frame = camera.read()
         if ret:
